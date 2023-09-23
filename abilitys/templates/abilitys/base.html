@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Portfolio</title>
+</head>
+<body>
+    <nav>
+         <div class="logo">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'abilitys/images/logo-.png' %}" alt="My Logo" width="71" height="68">
+            </a>
+        </div>
+        <div class="username">
+            {% if user.is_authenticated %}
+                <p>Hello,</p><span class="user">{{ user.username }}</span><p>!</p>
+            {% endif %}
+        </div>
+        <ul class="nav-links">
+            <li><a class="links" href="{% url 'home' %}">HOME</a></li>
+            <li><a class="links" href="{% url 'projects:project_list' %}">PROJECTS</a></li>
+            <li><a class="links" href="{% url 'contact:contact_page' %}">CONTACT</a></li>
+            {% if user.is_authenticated %}
+                {% csrf_token %}
+                <li><a class="links" href="{% url 'projects:logout' %}">EXIT</a></li>
+            {% else %}
+                <li><a class="links" href="{% url 'projects:login' %}">LOGIN</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Zubkov Oleg. All rights reserved.</p>
+    </footer>
+</body>
+</html>

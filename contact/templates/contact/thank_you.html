@@ -1,0 +1,12 @@
+{% extends 'abilitys/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="thank-you-section">
+    <h2>Thank You!</h2>
+    <img src="{% static 'contact/images/thank_you_img.png' %}" alt="Thank You Image" class="thank-you-image">
+    <p>Your message has been successfully submitted.</p>
+    <a href="{% url 'home' %}" class="button">Back to Home</a>
+</div>
+{% endblock %}
+

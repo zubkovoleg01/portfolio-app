@@ -1,0 +1,20 @@
+{% extends 'abilitys/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="project-list">
+    <h2 class="section-title">List of projects</h2>
+    <ul class="project-items">
+        {% for project in projects %}
+            <li class="project-item">
+                <h3 class="project-title"><a class="go_detail" href="{% url 'projects:project_detail' project.id %}">{{ project.title }}</a></h3>
+                <p class="project-date">Date: {{ project.date_completed }}</p>
+                <p class="project-description">{{ project.description }}</p>
+                <img src="{{ project.image.url }}" alt="{{ project.title }}" class="project-image1">
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+
+

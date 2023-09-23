@@ -1,0 +1,28 @@
+{% extends 'abilitys/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="home">
+    <h1>Welcome to My Portfolio</h1>
+    <p>I am a developer showcasing my projects and skills.</p>
+    <a href="{% url 'projects:project_list' %}" class="button">View Projects</a>
+</div>
+
+<div class="skills">
+    <div class="skill">
+        <img src="/media/abilitys/images/python-logo-.png" alt="Python Logo">
+        <h2>Python</h2>
+        <p>Experienced in Python programming with a focus on web development, data analysis, and automation.</p>
+    </div>
+    <div class="skill">
+        <img src="/media/abilitys/images/htmlcss-logo-.png" alt="HTML/CSS Logo">
+        <h2>HTML/CSS</h2>
+        <p>Proficient in building responsive and visually appealing web interfaces using HTML and CSS.</p>
+    </div>
+    <div class="skill">
+        <img src="/media/abilitys/images/js-logo-.png" alt="Javascript Logo">
+        <h2>Javascript</h2>
+        <p>Skilled in front-end development with JavaScript, creating dynamic and interactive web applications.</p>
+    </div>
+</div>
+{% endblock %}\

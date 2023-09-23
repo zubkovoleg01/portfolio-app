@@ -1,0 +1,23 @@
+{% extends 'abilitys/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="profile-section">
+    <h2>About Me</h2>
+    <p>Hello, I'm a developer with a love for coding. Feel free to contact me if you have any questions or inquiries.</p>
+    <h3>Links to my social networks:</h3>
+    <p><a href="#">Summary</a></p>
+    <p><a href="https://github.com/zubkovoleg01" target="_blank">GitHub</a></p>
+    <p><a href="https://t.me/russianmurder" target="_blank">Telegram</a></p>
+    <p><a href="https://wa.me/89879928013?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%F0%9F%91%8B%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82..." target="_blank">WhatsApp</a></p>
+</div>
+
+
+<h2 class="cont">Contact Me</h2>
+<form method="POST" class="form-section">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Submit</button>
+</form>
+{% endblock %}
